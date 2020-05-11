@@ -9,6 +9,8 @@ rhbase_dependencies:
   - firewalld
   - python3-firewall
   - python3-libsemanage
+  - openssh-server
+  - selinux-policy.noarch
 
 rhbase_package_manager: dnf
 rhbase_package_manager_configuration: /etc/dnf/dnf.conf

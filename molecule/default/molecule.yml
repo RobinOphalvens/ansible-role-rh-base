@@ -1,0 +1,32 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: Centos7
+    image: "geerlingguy/docker-centos7-ansible:latest"
+    command: "/usr/sbin/init"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    capabilities:
+      - SYS_ADMIN
+    pre_build_image: true
+    tty: True
+  - name: Fedora29
+    image: docker.io/geerlingguy/docker-fedora29-ansible:latest
+    command: "/usr/sbin/init"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    capabilities:
+      - SYS_ADMIN
+    pre_build_image: true
+    tty: True
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}

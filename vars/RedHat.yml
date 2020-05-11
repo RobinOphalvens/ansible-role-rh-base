@@ -9,6 +9,8 @@ rhbase_dependencies:
   - libselinux-python
   - libsemanage-python
   - firewalld
+  - openssh-server
+  - selinux-policy.noarch
 
 rhbase_package_manager: yum
 rhbase_package_manager_configuration: /etc/yum.conf

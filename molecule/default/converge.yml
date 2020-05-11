@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+#    rhbase_users:
+#      - name: robin
+#        comment: 'Robin Ophalvens'
+#        groups:
+#          - wheel
+#        password: "$6$ScOBREutjXejyFLt$leFt6qP.d.wtLyOOhkbeqaEgWsJe2IkDPtEh.j5jO/0zmo1F9AjXw.9yP.FyQBVv6i.8FZNVmReiqyU29jE3g1" 
+#    rhbase_install_packages: ['epel-release','openssh-server','firewalld','bash-completion','bind-utils','git','nano','tree','vim','wget','traceroute']
+#    rhbase_start_services: ['firewalld']   
+#    rhbase_selinux_state: 'enforcing'
+#    rhbase_ssh_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz8h4P71/19poaMo9TPEu73igzwrrIsks0eb7G3A8tNn9NXEiqsRWytPF/sO684szpNY2NceXNU8czGe4thmmyhFaIizY033o/5zSyC//r85JFdb8l6QyPwXlb4HinHYdRYTVWNSL8t5ppkKWB3Oqn6HEdES8625KyzzdKmO8XrYOCnuLUc/ENf0kIJp0v1A1zDrGPkLn7RNALRO5FLpoOm+IOOvXdM02LJeniJ1Cr6XoswBP2OswyGPIsyWMXN6JM1gvF1gUiE/IxUGqbgG1S23IveaAjEsA20fTSzNIfERx4yzQhnZ68EFReyXC0dKrzRLwweCPqcgRxBRIVZKjNHSEqjBVXm5TDjKhgnEZx/0GXwTZaq+vKFHQXFRacTxPWpHvsyW8Paq3fD2uL6zvPiTFxchCsAeSluHzf8gFbBi73M4YUSzhbjQzytziqPWp7dGI4l53IdO9Cavc3Rf1tYklioXiBzR+SbuzLY/anjI5egvwg3gEgV/O0lV5xpPc= robin@pop-os'
+#    rhbase_ssh_user: 'robin'
+#    rhbase_dynamic_motd: true
+  tasks:
+    - name: "Include ansible-role-rh-base"
+      include_role:
+        name: "ansible-role-rh-base"
